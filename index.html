@@ -383,15 +383,17 @@ section { padding: 110px 6%; }
 .svc-header-desc { font-size: 1rem; color: var(--grey); line-height: 1.8; }
 
 /* grid layout: 2 big + 3 small */
-.svc-big { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-bottom: 3px; }
-.svc-small { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
+.svc-big { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-bottom: 3px; align-items: stretch; }
+.svc-small { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; align-items: stretch; }
 
 .sc {
   background: var(--white);
   overflow: hidden; position: relative;
   cursor: default;
+  display: flex; flex-direction: column;
   transition: transform 0.35s, box-shadow 0.35s;
 }
+.sc-body { padding: 1.8rem 2rem 2rem; flex: 1; display: flex; flex-direction: column; }
 .sc:hover { transform: translateY(-7px); box-shadow: 0 28px 60px rgba(0,0,0,0.13); z-index: 2; }
 
 .sc-img-wrap { overflow: hidden; position: relative; }
@@ -411,7 +413,6 @@ section { padding: 110px 6%; }
   pointer-events: none;
 }
 
-.sc-body { padding: 1.8rem 2rem 2rem; }
 .sc.sm .sc-body { padding: 1.4rem 1.6rem 1.6rem; }
 
 .sc-icon {
@@ -843,9 +844,12 @@ footer {
             <div class="sc-title">Networking Services</div>
             <ul class="sc-list">
               <li>LAN wiring & structured data cabling</li>
-              <li>Wi-Fi setup & router installation</li>
+              <li>Wi-Fi setup, access points & router installation</li>
               <li>CCTV camera network cabling</li>
               <li>Smart home & office data infrastructure</li>
+              <li>Network switch & patch panel setup</li>
+              <li>Internet connection troubleshooting & repair</li>
+              <li>Cable management & trunking for clean installs</li>
             </ul>
           </div>
         </div>
@@ -966,9 +970,9 @@ footer {
               <div class="cc-icon"><i class="fas fa-phone-alt"></i></div>
               <div><span class="cc-lbl">Call Us Directly</span><span class="cc-val">0321-5582555</span></div>
             </a>
-            <a href="mailto:saimelec@gmail.com" class="cc">
+            <a href="/cdn-cgi/l/email-protection#7201131b1f171e171132151f131b1e5c111d1f" class="cc">
               <div class="cc-icon"><i class="fas fa-envelope"></i></div>
-              <div><span class="cc-lbl">Email Us</span><span class="cc-val">saimelec@gmail.com</span></div>
+              <div><span class="cc-lbl">Email Us</span><span class="cc-val"><span class="__cf_email__" data-cfemail="0d7e6c64606861686e4d6a606c6461236e6260">[email&#160;protected]</span></span></div>
             </a>
             <div class="cc" style="cursor:default;">
               <div class="cc-icon"><i class="fas fa-map-marker-alt"></i></div>
@@ -1037,7 +1041,7 @@ footer {
 
 </div><!-- /wrap -->
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ── mobile menu ── */
 const hbg     = document.getElementById('hbg');
 const mobMenu = document.getElementById('mobMenu');
@@ -1074,15 +1078,4 @@ rvEls.forEach(el => rvObs.observe(el));
 /* ── form send ── */
 function sendMsg(btn) {
   btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-  btn.style.background = '#22c55e';
-  btn.disabled = true;
-  setTimeout(() => {
-    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-    btn.style.background = '';
-    btn.disabled = false;
-  }, 3500);
-}
-</script>
-
-</body>
-</html>
+  btn.st
